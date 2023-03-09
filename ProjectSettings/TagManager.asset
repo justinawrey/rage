@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1912329157
+    locked: 0
+  - name: Decoration
+    uniqueID: 4084762619
+    locked: 0
