@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Button Unpress
+  m_Name: Left Gate Down
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,17 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1529099351, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
-    - time: 0.21666667
-      value: {fileID: -1752008200, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
+      value: {fileID: -1274096102, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
+    - time: 0.06666667
+      value: {fileID: -1828627451, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
+    - time: 0.16666667
+      value: {fileID: 2134643166, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
     - time: 0.33333334
-      value: {fileID: 1029850208, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
+      value: {fileID: -467091167, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
-  m_WrapMode: 8
+  m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -44,9 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1529099351, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
-    - {fileID: -1752008200, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
-    - {fileID: 1029850208, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
+    - {fileID: -1274096102, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
+    - {fileID: -1828627451, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
+    - {fileID: 2134643166, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
+    - {fileID: -467091167, guid: fa2c6cf16b08b4e47992159f58b835e5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -71,11 +74,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.33333334
-    functionName: RaiseAll
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

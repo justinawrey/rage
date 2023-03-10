@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 4735690512467293162}
   - component: {fileID: 6644210198083862413}
   - component: {fileID: 9136676160727376188}
-  - component: {fileID: 8466644598423236131}
-  - component: {fileID: 5236229846025022744}
+  - component: {fileID: 7215049323373882027}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Gate Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -210204677
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1029850208, guid: a21f92b02d1c84b9398ea723ca664621, type: 3}
+  m_Sprite: {fileID: 1139056649, guid: ccfbfc600f7dd4628b78faa94e0145cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 3735958720882970811}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed9f3b5d75a34485cb73eedfa726154d, type: 2}
+  m_Controller: {fileID: 22100000, guid: c5815b8ddda2e44f1acf2c7dd19e9090, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8466644598423236131
+--- !u!114 &7215049323373882027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,18 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9136676160727376188}
-  animationParameter: Pressed
---- !u!114 &5236229846025022744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3735958720882970811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21716d4c2846a46ab83bce74ac003503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowerables: []
-  staggerInterval: 0.1
+  animationParameter: Lowered
