@@ -3,42 +3,116 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
   private Vector2 input;
+  private bool isFacingEast = false;
+  private bool isFacingNorth = false;
 
   [SerializeField]
-  private Rigidbody2D rb;
+  private float velocity;
 
   [SerializeField]
-  private float maxVelocity, acceleration, deceleration;
+  private Sprite slimeN, slimeNE, slimeE, slimeSE, slimeS;
+
+  [SerializeField]
+  private SpriteRenderer spriteRenderer;
 
   private void Update()
   {
     input.x = Input.GetAxisRaw("Horizontal");
     input.y = Input.GetAxisRaw("Vertical");
+
+    transform.position += new Vector3(input.x, input.y, 0).normalized * velocity * Time.deltaTime;
+    ChangeSprite();
   }
 
-  private void FixedUpdate()
+  private void ChangeSprite()
   {
-    float forceX = GetMovementForce("Horizontal");
-    float forceY = GetMovementForce("Vertical");
+    if (PressingN())
+    {
+      if (PressingE())
+      {
+        spriteRenderer.flipX = false;
+        spriteRenderer.sprite = slimeNE;
+      }
+      else if (PressingW())
+      {
+        spriteRenderer.flipX = true;
+        spriteRenderer.sprite = slimeNE;
+      }
+      else
+      {
+        spriteRenderer.sprite = slimeN;
+      }
+    }
+    else if (PressingS())
+    {
+      if (PressingE())
+      {
+        spriteRenderer.flipX = false;
+        spriteRenderer.sprite = slimeSE;
+      }
+      else if (PressingW())
+      {
+        spriteRenderer.flipX = true;
+        spriteRenderer.sprite = slimeSE;
+      }
+      else
+      {
+        spriteRenderer.sprite = slimeS;
+      }
+    }
+    else if (PressingE())
+    {
+      spriteRenderer.flipX = false;
 
-    // TODO: Too much diagonal force is being applied
-    rb.AddForce(new Vector2(forceX, forceY));
+      if (PressingN())
+      {
+        spriteRenderer.sprite = slimeNE;
+      }
+      else if (PressingS())
+      {
+        spriteRenderer.sprite = slimeSE;
+      }
+      else
+      {
+        spriteRenderer.sprite = slimeE;
+      }
+    }
+    else if (PressingW())
+    {
+      spriteRenderer.flipX = true;
+
+      if (PressingN())
+      {
+        spriteRenderer.sprite = slimeNE;
+      }
+      else if (PressingS())
+      {
+        spriteRenderer.sprite = slimeSE;
+      }
+      else
+      {
+        spriteRenderer.sprite = slimeE;
+      }
+    }
   }
 
-  private float GetMovementForce(string axis)
+  private bool PressingN()
   {
-    bool isHorizontalMovement = axis == "Horizontal";
+    return input.y == 1;
+  }
 
-    // Calculate the direction we want to move in and our desired velocity
-    float targetVelocity = (isHorizontalMovement ? input.x : input.y) * maxVelocity;
+  private bool PressingS()
+  {
+    return input.y == -1;
+  }
 
-    // Calculate acceleration based on if we're moving or not
-    float accel = (Mathf.Abs(targetVelocity) > 0.01f) ? acceleration : deceleration;
+  private bool PressingE()
+  {
+    return input.x == 1;
+  }
 
-    // Calculate difference between current velocity and desired velocity
-    float velocityDiff = targetVelocity - (isHorizontalMovement ? rb.velocity.x : rb.velocity.y);
-
-    // Calculate force along x-axis to apply to the player
-    return velocityDiff * accel;
+  private bool PressingW()
+  {
+    return input.x == -1;
   }
 }
