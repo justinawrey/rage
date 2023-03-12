@@ -47,6 +47,9 @@ TagManager:
   - name: Decoration
     uniqueID: 4084762619
     locked: 0
-  - name: Player
-    uniqueID: 4172891029
+  - name: 3D
+    uniqueID: 1335997181
+    locked: 0
+  - name: Occlude All
+    uniqueID: 1062072887
     locked: 0

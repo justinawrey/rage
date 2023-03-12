@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
   private bool isFacingNorth = false;
 
   [SerializeField]
+  private Rigidbody2D rb;
+
+  [SerializeField]
   private float velocity;
 
   [SerializeField]
@@ -20,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     input.x = Input.GetAxisRaw("Horizontal");
     input.y = Input.GetAxisRaw("Vertical");
 
-    transform.position += new Vector3(input.x, input.y, 0).normalized * velocity * Time.deltaTime;
+    rb.velocity = input.normalized * velocity;
     ChangeSprite();
   }
 
